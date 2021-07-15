@@ -11,7 +11,9 @@
   "scripts": {
     "serve": "export VUE_APP_VERSION=$(git rev-parse HEAD) && vue-cli-service serve",
     "build": "export VUE_APP_VERSION=$(git rev-parse HEAD) && vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
@@ -36,13 +38,14 @@
     "vue-tables-2": "^1.4.70",
     "vuelidate": "^0.7.4",
     "vuex": "^3.1.1",
-    "vuex-router-sync": "^5.0.0"
+    "vuex-router-sync": "^5.0.0",
+    "snyk": "^1.662.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
     "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/eslint-plugin": "^4.2.0",
     "babel-eslint": "^10.0.1",
@@ -85,5 +88,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "snyk": true
 }
